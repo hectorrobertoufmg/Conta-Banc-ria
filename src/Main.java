@@ -15,19 +15,8 @@ public class Main {
         int opcao;
         double valor;
 
-        String menuTipoConta =  """
-                1) Corrente.
-                2) Poupança.
-                Digite o tipo da conta:
-                """;
 
-        String descricaoConta =
-                """
-                Nome:           %s
-                Tipo de conta:  %s
-                Saldo inicial:  %f
-                """.formatted(nome, tipoDeConta, saldo);
-        String menuCOnta =
+        String menuConta =
                 """
                 .
                 1) Depositar.
@@ -39,7 +28,7 @@ public class Main {
 
         while(!exit)
         {
-            System.out.println(menuCOnta);
+            System.out.println(menuConta);
             opcao = leitura.nextInt();
             // recebe o \n do input anterior
             leitura.nextLine();
@@ -82,7 +71,11 @@ public class Main {
                         }
                     }
                 case 3:
-                    System.out.println(descricaoConta);
+                    System.out.println("""
+                                              Nome:           %s
+                                              Tipo de conta:  %s
+                                              Saldo inicial:  %f
+                                        """.formatted("Hector Roberto", "Corrente", saldo));
                     break;
                 case 4:
                     exit = true;
